@@ -6,20 +6,15 @@ function getComputerChoice(){
 function compChoice(num){
     let choice;
 
-    switch (num){
-        case 1:
-            choice = "rock";
-            break;
-        case 2:
-            choice = 'scissor';
-            break;
-        case 3: 
-            choice = "paper";
-            break;
-    }
+    num = 1 ? "rock" 
+    : num = 2 ? "scissor" 
+    : "paper";
+
     return choice;
 }
 
 function singleRound(playerSelection, computerSelection){
-    
+
 }
+
+console.log(getComputerChoice());
