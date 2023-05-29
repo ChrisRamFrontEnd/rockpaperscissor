@@ -11,8 +11,8 @@ function compChoice(num){
     return choice;
 }
 
-function singleRound(playerSelection, computerSelection){
-    let select = playerSelection.toLowerCase();
+function singleRound(computerSelection){
+    let select = prompt("Please enter one of the three choices, Rock, Paper, or Scissors");
     if(select === computerSelection)
         return 2;//`TIE!! Player selected: ${select}, Computer selected: ${computerSelection}`;
     else if((select === 'rock' && computerSelection === 'scissor') 
@@ -29,14 +29,18 @@ function game(){
     ties = 0;
     
     for(let i = 0; i < 5; i++){
-        let selection = prompt("Please enter one of the three choices, Rock, Paper, or Scissors");
-        singleRound(selection, getComputerChoice) === 2 ? ties++ 
-        : singleRound(selection, getComputerChoice) === 1 ? wins++ 
-        : losses++;
-
-        document.getElementById("wins").innerHTML = `Wins: ${wins}`;
-        document.getElementById("losses").innerHTML = `Losses: ${losses}`;
-        document.getElementById("ties").innerHTML = `Ties: ${ties}`;
+        if(singleRound(getComputerChoice) === 1){
+            wins++;
+            document.getElementById("wins").innerHTML = `Wins: ${wins}`;
+        }
+        else if(singleRound(getComputerChoice) === 0){
+            losses++;
+            document.getElementById("losses").innerHTML = `Losses: ${losses}`;
+        }
+        else{
+            ties++;
+            document.getElementById("ties").innerHTML = `Ties: ${ties}`;
+        }
     }
 
     
