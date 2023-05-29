@@ -11,16 +11,18 @@ function compChoice(num){
     return choice;
 }
 
-function singleRound(computerSelection){
-    let select = prompt("Please enter one of the three choices, Rock, Paper, or Scissors");
+function singleRound(playerSelection, computerSelection){
+    let select = playerSelection.toLowerCase();
     if(select === computerSelection)
-        return 2;//`TIE!! Player selected: ${select}, Computer selected: ${computerSelection}`;
+        return 2;
     else if((select === 'rock' && computerSelection === 'scissor') 
     || (select === 'scissor' && computerSelection === 'paper') 
     || (select === 'paper' && computerSelection === 'rock'))
-        return 1;//`YOU WIN!! ${select} beats ${computerSelection}, nice job!!`;
-    else 
-        return 0;//`YOU LOSE!!! ${computerSelection} beats ${select}, better luck next time!`;
+        return 1;
+    else if(!(select === 'rock' && computerSelection === 'scissor') 
+    || !(select === 'scissor' && computerSelection === 'paper') 
+    || !(select === 'paper' && computerSelection === 'rock'))
+        return 0;
 }
 
 function game(){
@@ -29,11 +31,13 @@ function game(){
     ties = 0;
     
     for(let i = 0; i < 5; i++){
-        if(singleRound(getComputerChoice) === 1){
+        let selection = prompt("Please enter one of the three choices, Rock, Paper, or Scissors");
+        let result = singleRound(selection, getComputerChoice());
+        if(result=== 1){
             wins++;
             document.getElementById("wins").innerHTML = `Wins: ${wins}`;
         }
-        else if(singleRound(getComputerChoice) === 0){
+        else if(result === 0){
             losses++;
             document.getElementById("losses").innerHTML = `Losses: ${losses}`;
         }
@@ -42,6 +46,8 @@ function game(){
             document.getElementById("ties").innerHTML = `Ties: ${ties}`;
         }
     }
-
-    
+    wins > losses ? document.getElementById("result").innerHTML = "YOU WON!!" 
+    : wins === losses ? document.getElementById("result").innerHTML = "YOU TIED!"
+    : ties >= wins ? document.getElementById("result").innerHTML = "You tied quite a bit there!"
+    : document.getElementById("result").innerHTML = "YOU LOSE!! :(";
 }
