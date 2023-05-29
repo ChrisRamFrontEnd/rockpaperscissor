@@ -24,4 +24,7 @@ function singleRound(playerSelection, computerSelection){
         return `YOU LOSE!!! ${computerSelection} beats ${select}, better luck next time!`;
 }
 
-console.log(singleRound('ROCK', getComputerChoice()));
+function game(){
+    let selection = prompt("Please enter one of the three choices, Rock, Paper, or Scissors");
+    
+}
