@@ -1,14 +1,16 @@
 function getComputerChoice(){
     let choice = Math.floor(Math.random() * 3) + 1;
-    return compChoice(choice);
+    console.log(choice);
+    return compChoice(+choice);
 }
 
 function compChoice(num){
     let choice;
 
-    num = 1 ? "rock" 
-    : num = 2 ? "scissor" 
-    : "paper";
+    num === 1 ? choice = "rock" 
+    : num === 2 ? choice = "scissor" 
+    : choice = "paper";
+
 
     return choice;
 }
