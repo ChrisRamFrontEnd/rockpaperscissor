@@ -15,7 +15,7 @@ function compChoice(num){
 function singleRound(playerSelection, computerSelection){
     let select = playerSelection.toLowerCase();
     if(select === computerSelection)
-        return `TIE!! Player selected: ${select}, Computer selecyed: ${computerSelection}`;
+        return `TIE!! Player selected: ${select}, Computer selected: ${computerSelection}`;
     else if((select === 'rock' && computerSelection === 'scissor') 
     || (select === 'scissor' && computerSelection === 'paper') 
     || (select === 'paper' && computerSelection === 'rock'))
