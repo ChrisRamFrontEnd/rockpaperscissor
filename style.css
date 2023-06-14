@@ -1,3 +1,14 @@
 div{
-    display: flexbox;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+h1{
+    text-align:  center;
+}
+button {
+    padding: 15px;
+}
+p{
+    text-align: center;
 }
