@@ -14,18 +14,21 @@ function compChoice(num){
 function singleRound(playerSelection, computerSelection){
     let select = playerSelection.toLowerCase();
     if(select === computerSelection)
-        return 2;
+        console.log('Tie');
     else if((select === 'rock' && computerSelection === 'scissor') 
     || (select === 'scissor' && computerSelection === 'paper') 
     || (select === 'paper' && computerSelection === 'rock'))
-        return 1;
+        console.log('Win');
     else if(!(select === 'rock' && computerSelection === 'scissor') 
     || !(select === 'scissor' && computerSelection === 'paper') 
     || !(select === 'paper' && computerSelection === 'rock'))
-        return 0;
+        console.log('Lose');
 }
 
-
+const buttons = document.querySelectorAll('button');
+buttons.forEach((button) =>{
+    button.addEventListener('click', singleRound(button.id, compChoice(getComputerChoice())));
+});
 
 // function game(){
 //     let wins = 0, 
