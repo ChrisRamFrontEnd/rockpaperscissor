@@ -74,24 +74,36 @@ function resets(){
     round = 0;
 }
 
+function removeTransition(e){
+    if(e.propertyName !== 'transform') return;
+    this.classList.remove('selected');
+}
+
 const reset = document.querySelector('#reset');
 reset.addEventListener('click', ()=>{
+    reset.classList.add('selected');
     resets();
 });
 const scissor = document.querySelector('#scissor');
 scissor.addEventListener('click', () =>{
+    scissor.classList.add('selected');
     singleRound("scissor", getComputerChoice());
 });
 
 const rock = document.querySelector('#rock');
 rock.addEventListener('click', ()=>{
+    rock.classList.add('selected');
     singleRound('rock', getComputerChoice());
 });
 
 const paper = document.querySelector('#paper');
 paper.addEventListener('click', ()=>{
+    paper.classList.add('selected');
     singleRound('paper',getComputerChoice());
 });
+
+const buttons = document.querySelectorAll('button');
+buttons.forEach(button => button.addEventListener('transitionend', removeTransition))
 
 // function game(){
 //     let wins = 0, 
