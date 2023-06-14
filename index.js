@@ -104,30 +104,3 @@ paper.addEventListener('click', ()=>{
 
 const buttons = document.querySelectorAll('button');
 buttons.forEach(button => button.addEventListener('transitionend', removeTransition))
-
-// function game(){
-//     let wins = 0, 
-//     losses  = 0, 
-//     ties = 0;
-    
-//     for(let i = 0; i < 5; i++){
-//         let selection = prompt("Please enter one of the three choices, Rock, Paper, or Scissors");
-//         let result = singleRound(selection, getComputerChoice());
-//         if(result=== 1){
-//             wins++;
-//             document.getElementById("wins").innerHTML = `Wins: ${wins}`;
-//         }
-//         else if(result === 0){
-//             losses++;
-//             document.getElementById("losses").innerHTML = `Losses: ${losses}`;
-//         }
-//         else{
-//             ties++;
-//             document.getElementById("ties").innerHTML = `Ties: ${ties}`;
-//         }
-//     }
-//     wins > losses ? document.getElementById("result").innerHTML = "YOU WON!!" 
-//     : wins === losses ? document.getElementById("result").innerHTML = "YOU TIED!"
-//     : ties >= wins ? document.getElementById("result").innerHTML = "You tied quite a bit there!"
-//     : document.getElementById("result").innerHTML = "YOU LOSE!! :(";
-// }
