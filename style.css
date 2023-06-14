@@ -5,10 +5,16 @@
 }
 h1{
     text-align:  center;
+    background-color: aqua;
+    
 }
 button {
     padding: 15px;
     border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.07s;
 }
 p{
     text-align: center;
@@ -33,4 +39,10 @@ body{
 img{
     width: 50px;
     height: auto;
+    align-self: center;
+}
+.selected{
+    transform: scale(1.1);
+    border-color: #ffc600;
+    box-shadow:0 0 10px #ffc600;
 }
