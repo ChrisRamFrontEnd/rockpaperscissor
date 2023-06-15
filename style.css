@@ -1,12 +1,11 @@
 .container{
     display: flex;
     justify-content: center;
-    gap: 5px;
-}
-h1{
-    text-align:  center;
-    background-color: aqua;
-    
+    gap: 10px;
+    border: solid grey 5px;
+    padding: 10px;
+    border-radius: 15px;
+    background-color:aquamarine;
 }
 button {
     padding: 15px;
@@ -21,15 +20,20 @@ p{
 }
 .content{
     width: 300px;
-    height: 300px;
+    height: 350px;
     background-color:beige;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: flex-start;
+    border:solid gray 5px;
+    border-radius: 30px;
+    gap: 15px;
+    padding: 10px 0px;
+    text-shadow: 1px 1px 2px white;
 }
 body{
-    background-color: aliceblue;
+    background-color: black;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -43,6 +47,23 @@ img{
 }
 .selected{
     transform: scale(1.1);
-    border-color: #ffc600;
-    box-shadow:0 0 10px #ffc600;
+    border-color:aqua;
+    box-shadow:0 0 10px aqua;
+}
+.header{
+    border-radius: 15px;
+    border: solid grey 5px;
+    padding: 0px 15px;
+    align-items: stretch;
+    background-color: cadetblue;
+}
+.compChoice{
+    width: 300px;
+    height: auto;
+    background-color:darkgrey;
+    border: solid grey 5px;
+    border-radius: 15px;
+    text-align: center;
+    padding: 10px;
+    text-shadow: 1px 1px 2px yellow;
 }

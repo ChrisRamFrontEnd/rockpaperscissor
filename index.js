@@ -14,51 +14,61 @@ function compChoice(num){
 
 function singleRound(playerSelection, computerSelection){
     const container = document.querySelector('.content');
+    const comp = document.querySelector('.compChoice');
     if(playerSelection === computerSelection){
+        comp.textContent = `Computer Chose: ${computerSelection}`;
         const tie = document.createElement('div');
         tie.classList.add('round');
         round++;
         tie.textContent = `Round: ${round}, Tie.`;
+        tie.style.cssText = 'text-align:center; padding: 10px; border-radius:30px; border: solid black 5px';
         container.appendChild(tie);
     }
     else if((playerSelection === 'rock' && computerSelection === 'scissor') 
     || (playerSelection === 'scissor' && computerSelection === 'paper') 
     || (playerSelection === 'paper' && computerSelection === 'rock')){
+        comp.textContent = `Computer Chose: ${computerSelection}`;
         const win = document.createElement('div');
         win.classList.add('round');
         round++;
         wins++;
         win.textContent = `Round: ${round}, Win.`;
+        win.style.cssText = 'text-align:center; padding: 10px; border-radius:30px; border: solid black 5px';
         container.appendChild(win);
     }
     else if(!(playerSelection === 'rock' && computerSelection === 'scissor') 
     || !(playerSelection === 'scissor' && computerSelection === 'paper') 
     || !(playerSelection === 'paper' && computerSelection === 'rock')){
+        comp.textContent = `Computer Chose: ${computerSelection}`;
         const lose = document.createElement('div');
         lose.classList.add('round');
         round++;
         losses++;
         lose.textContent = `Round: ${round}, Lose.`;
+        lose.style.cssText = 'text-align:center; padding: 10px; border-radius:30px; border: solid black 5px';
         container.appendChild(lose);
     }
 
     if(round === 5){
         if(wins > losses){
+            comp.textContent = ``;
             const endMessage = document.createElement('div');
             endMessage.textContent = 'You have beat the Computer!';
-            endMessage.style.cssText = 'color: green';
+            endMessage.style.cssText = 'text-align: center; color: green';
             container.appendChild(endMessage);
         }
         else if(wins === losses){
+            comp.textContent = ``;
             const endMessage = document.createElement('div');
             endMessage.textContent = 'You have Tied with the computer, Try again!';
-            endMessage.style.cssText = 'color: blue';
+            endMessage.style.cssText = 'color: blue; text-align: center';
             container.appendChild(endMessage);
         }
         else{
+            comp.textContent = ``;
             const endMessage = document.createElement('div');
             endMessage.textContent = 'You have Lost to the Computer, better luck next time!';
-            endMessage.style.cssText = 'color: red';
+            endMessage.style.cssText = 'color: red; text-align: center';
             container.appendChild(endMessage);
         }
     }
@@ -72,6 +82,8 @@ function resets(){
     while(container.children.length > 0)
         container.removeChild(container.firstChild);
     round = 0;
+    wins = 0;
+    losses = 0;
 }
 
 function removeTransition(e){
