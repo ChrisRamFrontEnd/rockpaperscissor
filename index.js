@@ -79,6 +79,8 @@ function singleRound(playerSelection, computerSelection){
 
 function resets(){
     const container = document.querySelector('.content');
+    const comp = document.querySelector('.compChoice');
+    comp.textContent = ``;
     while(container.children.length > 0)
         container.removeChild(container.firstChild);
     round = 0;
